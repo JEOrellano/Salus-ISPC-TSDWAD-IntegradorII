@@ -9,7 +9,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { LoginComponent } from './pages/login/login.component';
 import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.compon
     NosotrosComponent,
     ContactoComponent,
     RegistroComponent,
-    SuscripcionComponent
+    SuscripcionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
