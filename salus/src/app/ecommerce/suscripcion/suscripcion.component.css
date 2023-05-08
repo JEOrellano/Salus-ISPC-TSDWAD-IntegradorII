@@ -1,18 +1,35 @@
-.form-register {
-  width: 400px;
+.suscription-register {
+  /* width: 400px; */
   background: #004d40;
   padding: 30px;
   margin: auto;
   margin-bottom: 30px;
   border-radius: 5px;
   font-family: "calibri";
-  color: white;
+  /* color: white; */
   box-shadow: 7px 13px 37px #000;
 }
-.form-register h1 {
-  font-size: 22px;
-  margin-bottom: 20px;
+.suscription-register h3 {
+  font-family: "calibri";
+  font-size: 2.25rem;
+  margin-bottom: 5px;
+  color: white !important;
 }
+.suscription-register h5 {
+  font-family: "calibri";
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  color: rgb(192, 190, 190) !important;
+}
+.suscription-register ul li {
+  font-family: "calibri";
+  font-size: 1rem;
+  color: whitesmoke !important;
+  margin-bottom: 2px;
+}
+
+
+
 .controls {
   width: 100%;
   background: #004d40;
@@ -24,21 +41,16 @@
   color: white;
   outline: none;
 }
-.form-register p {
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 40px;
-}
-.form-register a {
+
+.suscription-register a {
   color: white;
   text-decoration: none;
 }
-.form-register a:hover {
+.suscription-register a:hover {
   color: white;
-  text-decoration: underline;
+  background: #05856f;
 }
-.form-register .botons {
+.suscription-register .botons {
   display: inline-block;
   width: 100%;
   padding: 12px;
@@ -48,7 +60,7 @@
   border: none;
   color: white;
   border-radius: 10px;
-  box-shadow: 1px 2px #6ea8c9;
+  box-shadow: 1px 2px #028879;
   cursor: pointer;
   letter-spacing: 3px;
   text-decoration: none;
