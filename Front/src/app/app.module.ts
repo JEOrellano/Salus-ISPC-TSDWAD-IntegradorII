@@ -13,6 +13,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './ecommerce/form/form.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactoComponent,
     RegistroComponent,
     SuscripcionComponent,
-    LoginComponent
+    LoginComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.component';
+import { FormComponent } from './ecommerce/form/form.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -14,8 +15,8 @@ const routes: Routes = [
   {path:'contacto', component:ContactoComponent},
   {path:'registro', component:RegistroComponent},
   {path:'suscripcion', component:SuscripcionComponent},
-  {path:'login', component:LoginComponent}
-
+  {path:'login', component:LoginComponent},
+  {path:'formSuscripcion', component:FormComponent}
 ];
 
 @NgModule({

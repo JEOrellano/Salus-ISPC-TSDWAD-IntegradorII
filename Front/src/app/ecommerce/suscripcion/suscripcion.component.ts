@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SuscriptionService } from './../../services/suscription.service'
-import { Suscription } from 'src/app/model/suscription.model';
+import { CreateSuscriptionDTO, Suscription } from 'src/app/model/suscription.model';
 
 @Component({
   selector: 'app-suscripcion',
@@ -10,8 +10,6 @@ import { Suscription } from 'src/app/model/suscription.model';
 export class SuscripcionComponent implements OnInit{
 
   mySuscriptions: Suscription[] = [];
- myServices: Suscription["descripcion"] = [];
-
 
   choseSuscription: {} = {};
 
@@ -22,15 +20,12 @@ export class SuscripcionComponent implements OnInit{
     this.suscriptionService.getAllSuscriptions()
     .subscribe(data => {
       this.mySuscriptions = data
-      console.log(this.mySuscriptions)
     })
   }
 
   getSuscription(){
     console.log(this.mySuscriptions)
   }
-
-
 
   getSuscriptionOne(){
     let id = 3
@@ -40,5 +35,6 @@ export class SuscripcionComponent implements OnInit{
       console.log(this.choseSuscription)
     })
   }
+
 
 }
