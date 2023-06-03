@@ -14,6 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './ecommerce/form/form.component';
+import { MedicoComponent } from './pages/medico/medico.component';
+import { PacienteComponent } from './pages/paciente/paciente.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FormComponent } from './ecommerce/form/form.component';
     RegistroComponent,
     SuscripcionComponent,
     LoginComponent,
-    FormComponent
+    FormComponent,
+    MedicoComponent,
+    PacienteComponent
   ],
   imports: [
     BrowserModule,
