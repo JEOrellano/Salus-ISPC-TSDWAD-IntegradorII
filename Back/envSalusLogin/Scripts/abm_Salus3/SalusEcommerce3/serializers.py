@@ -3,7 +3,20 @@ from django.contrib.auth import get_user_model
 from .models import Servicios, Cuentas,Ventas,UsuariosMedicos,ServiciosXMedicos,DetallesVentas,UsuariosPacientes,MedicosPacientes,TiposEstudios,HistorialesMedicos
 from django.contrib.auth.hashers import make_password
 
+# USER CUSTOM
+class UserSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(
+        required=True)
+    username = serializers.CharField(
+        required=True)
+    password = serializers.CharField(
+        min_length=8)
 
+    class Meta:
+        model = get_user_model()
+        fields = ('email', 'username', 'password')
+    def validate_password(self, value):
+        return make_password(value)
 
 # Tabla Servicios
 class ServicioSerializer(serializers.ModelSerializer):
