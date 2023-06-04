@@ -30,6 +30,7 @@ import { PacienteComponent } from './pages/paciente/paciente.component';
     FormComponent,
     MedicoComponent,
     PacienteComponent
+
   ],
   imports: [
     BrowserModule,
