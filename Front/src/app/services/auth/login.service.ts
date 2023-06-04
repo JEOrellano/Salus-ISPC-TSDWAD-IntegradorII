@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginRequest } from './loginRequest';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError, catchError } from 'rxjs'
+import { Observable, throwError, catchError, map } from 'rxjs'
 import { User } from './user';
 
 @Injectable({
@@ -10,10 +10,25 @@ import { User } from './user';
 export class LoginService {
 
   constructor(private http: HttpClient) { }
-
+/* 
   login(credentials:LoginRequest):Observable<User>{
-    return this.http.get<User>('././assets/data.json').pipe(
+    const url = "/api/v1/usuariospacientes"
+    
+    return this.http.get<User>(url).pipe(
       catchError(this.handleError)
+    )
+  } */
+
+  login(){
+    const url = "/api/v1/usuariospacientes"
+    
+    return this.http.get<User[]>(url)
+    .pipe(
+      /* map(users => users.map(item => {
+        return{
+          ...item,
+        }
+      })) */
     )
   }
 

@@ -2,6 +2,7 @@ export interface User{
   id: number;
   name?: string;
   lastName?: string;
-  email: string;
+  Email_UP: string;
   message?: string;
+  Clave_UP: string;
 }

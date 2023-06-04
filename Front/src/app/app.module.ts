@@ -9,7 +9,6 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
-import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,7 +25,6 @@ import { PacienteComponent } from './pages/paciente/paciente.component';
     HomeComponent,
     NosotrosComponent,
     ContactoComponent,
-    RegistroComponent,
     SuscripcionComponent,
     LoginComponent,
     FormComponent,
