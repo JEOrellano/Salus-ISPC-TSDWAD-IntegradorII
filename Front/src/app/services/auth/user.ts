@@ -1,7 +1,7 @@
 export interface User{
   id: number;
-  name?: string;
-  lastName?: string;
+  Nombre_UP?: string;
+  Apellido_UP?: string;
   Email_UP: string;
   message?: string;
   Clave_UP: string;
