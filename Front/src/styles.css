@@ -32,8 +32,10 @@ h2 {
 
 .ng-valid:not(form).ng-touched {
   border: 1px solid green;
+  margin-bottom: 5px;
 }
 
 .ng-invalid:not(form).ng-touched {
   border: 1px solid red;
+  margin-bottom: 10px;
 }

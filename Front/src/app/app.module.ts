@@ -30,8 +30,12 @@ import { RegistroComponent } from './pages/registro/registro.component';
     LoginComponent,
     FormComponent,
     MedicoComponent,
+
     PacienteComponent,
     RegistroComponent
+
+
+
   ],
   imports: [
     BrowserModule,

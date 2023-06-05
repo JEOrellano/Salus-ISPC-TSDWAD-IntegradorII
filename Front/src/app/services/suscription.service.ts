@@ -9,7 +9,7 @@ import { map } from 'rxjs';
 export class SuscriptionService {
 
   // urlApi = "https://my-json-server.typicode.com/GastonSca/db-json/suscripciones"
-  urlApi = "api/v1/servicios"
+  urlApi = "api/v1/servicios/"
 
   constructor(
     private http: HttpClient
@@ -32,11 +32,7 @@ export class SuscriptionService {
   }
 
   createSuscription(data:CreateSuscriptionDTO){
-    return this.http.post<Suscription>(this.urlApi, data);
+    return this.http.post<CreateSuscriptionDTO>(this.urlApi, data);
   }
-
-  // newSuscription(suscripcion: SuscriptionCreate){
-  //   console.log(suscripcion)
-  // }
 
 }
