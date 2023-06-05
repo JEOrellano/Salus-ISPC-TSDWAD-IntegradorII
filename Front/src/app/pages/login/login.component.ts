@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
-import { LoginRequest } from 'src/app/services/auth/loginRequest';
 import { HttpClient } from '@angular/common/http';
 import { User } from "../../services/auth/user";
 
@@ -38,34 +37,13 @@ export class LoginComponent implements OnInit{
         return this.loginForm.value.email === user.Email_UP
       })
       console.log(user)
-      if(user){
-        if (user.Clave_UP === this.loginForm.value.password) {
-          alert("correcto")
-            this.router.navigateByUrl('/home');
-        } else {
-          alert("incorrecto")
+        if(user){
+          if (user.Clave_UP === this.loginForm.value.password) {
+              this.router.navigateByUrl('/home');
+          } else {
+            alert("contraseña incorrecta")
+          }
         }
-      }
-
-        /* 
-        {
-        next: (userData) => {
-          console.log(userData);
-          const email = this.loginForm.value.email
-          console.log(email)
-
-        },
-        error: (errorData) => {
-          console.error(errorData);
-          this.loginError=errorData;
-        },
-        complete: () => {
-          console.info('login completo');
-          this.router.navigateByUrl('/home');
-          this.loginForm.reset()
-        }
-      }
-        */
       })
     }else{
       this.loginForm.markAllAsTouched();
