@@ -1,6 +1,10 @@
 export interface Suscription {
-  id: string,
-  tipoServicio: string,
-  precio: number,
-  descripcion: string[]
+  id: number,
+  TipoServicio_S: string,
+  Precio_S: number,
+  Descripcion_S: string,
+  DescripcionList?: string[]
 }
+
+export interface CreateSuscriptionDTO extends Omit<Suscription, 'id' | 'DescripcionList'>{ }
+

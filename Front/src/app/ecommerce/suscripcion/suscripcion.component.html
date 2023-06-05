@@ -1,138 +1,19 @@
 <main>
-  <button (click)="getSuscription()">Suscripciones</button>
-  <button (click)="getSuscriptionOne()">Suscripcion 2</button>
-  <!-- <div class="container mb-5 mt-2">
+  <div class="container mb-5 mt-2 ">
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-4" *ngFor="let dato of mySuscriptions">
         <div class="mb-5 mb-lg-0">
           <div class="card-body suscription-register">
             <h3 class="card-title text-muted text-uppercase text-center">
-              Básico
+              {{dato.TipoServicio_S}}
             </h3>
             <h5 class="card-price text-center">
-              $2.500<span class="period">/mes</span>
+              {{dato.Precio_S | currency:"$"}}<span class="period">/mes</span>
             </h5>
             <hr />
             <ul class="fa-ul">
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Limpieza
-                Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Examen
-                Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Blanqueamiento Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Tratamiento de caries
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Endodoncia
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Ortodoncia
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Implantes
-                Dentales
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Cirugia
-                oral
-              </li>
-            </ul>
-            <div class="d-grid">
-              <a href="#" class="btn botons text-uppercase">Suscríbete</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="mb-5 mb-lg-0">
-          <div class="card-body suscription-register">
-            <h3 class="card-title text-muted text-uppercase text-center">
-              Estándar
-            </h3>
-            <h5 class="card-price text-center">
-              $5.000<span class="period">/mes</span>
-            </h5>
-            <hr />
-            <ul class="fa-ul">
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Limpieza
-                Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Examen
-                Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Blanqueamiento Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Tratamiento de caries
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Endodoncia
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Ortodoncia
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Implantes
-                Dentales
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-times"></i></span>Cirugia
-                oral
-              </li>
-            </ul>
-            <div class="d-grid">
-              <a href="#" class="btn botons text-uppercase">Suscríbete</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="">
-          <div class="card-body suscription-register">
-            <h3 class="card-title text-muted text-uppercase text-center">
-              Premium
-            </h3>
-            <h5 class="card-price text-center">
-              $10.000<span class="period">/mes</span>
-            </h5>
-            <hr />
-            <ul class="fa-ul">
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Limpieza
-                Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Examen
-                Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Blanqueamiento Dental
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Tratamiento de caries
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Endodoncia
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Ortodoncia
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Implantes
-                Dentales
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-check"></i></span>Cirugia
-                oral
+              <li *ngFor="let item of dato.DescripcionList">
+                <span class="fa-li"><i class="fas fa-check"></i></span>{{item}}
               </li>
             </ul>
             <div class="d-grid">
@@ -142,5 +23,5 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </main>

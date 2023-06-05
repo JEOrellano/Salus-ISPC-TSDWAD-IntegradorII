@@ -5,5 +5,5 @@ export interface Client {
   celular: string,
   direccion: string,
   localidad: string,
-  mail: string
+  mail: string,
 }
