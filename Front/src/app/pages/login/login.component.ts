@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from "../../services/auth/user";
-import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
+import { SharedServicesComponent } from '../../services/auth/shared-services/shared-services.component';
 
 @Component({
   selector: 'app-login',

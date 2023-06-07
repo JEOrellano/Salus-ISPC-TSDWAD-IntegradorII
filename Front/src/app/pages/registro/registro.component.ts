@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 import { RegistryService } from 'src/app/services/auth/registry.service';
 import { HttpClient } from '@angular/common/http';
 import { RegistryRequest } from "../../services/auth/registryRequest";
-import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
+import { SharedServicesComponent } from '../../services/auth/shared-services/shared-services.component';
 
 @Component({
   selector: 'app-registro',
