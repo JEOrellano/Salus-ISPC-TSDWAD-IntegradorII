@@ -12,13 +12,12 @@ import { CreateSuscriptionDTO, Suscription } from 'src/app/model/suscription.mod
 export class FormComponent {
 
   constructor(private formBuilder: FormBuilder, private router: Router, private suscriptionService: SuscriptionService) { }
-
   auxiliar: string = "";
 
   suscripcionForm = this.formBuilder.group({
-    TipoServicio_S: ["", [Validators.required, Validators.maxLength(25), Validators.minLength(4)]],
+    TipoServicio_S: ["", [Validators.required, Validators.maxLength(25), Validators.minLength(4), Validators.pattern(/^[a-zA-Z\sñÑáéíóúÁÉÍÓÚ]+$/)]],
     Precio_S: [0, [Validators.required, Validators.min(2000)]],
-    servicios: this.formBuilder.array([])
+    servicios: this.formBuilder.array([], [Validators.required])
   })
 
 
