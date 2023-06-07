@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { RegistryService } from 'src/app/services/auth/registry.service';
 import { HttpClient } from '@angular/common/http';
 import { RegistryRequest } from "../../services/auth/registryRequest";
+import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +12,7 @@ import { RegistryRequest } from "../../services/auth/registryRequest";
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit{
- 
+  
   loginError:string="";
   registryForm=this.formBuilder.group({
     Nombre_UP:['', Validators.required],
@@ -22,7 +23,7 @@ export class RegistroComponent implements OnInit{
   })
   
 
-  constructor(private formBuilder:FormBuilder, private registryService: RegistryService, private router:Router){}
+  constructor(private formBuilder:FormBuilder, private registryService: RegistryService, private router:Router, private sharedService: SharedServicesComponent){}
   
   ngOnInit(): void{}
 
@@ -31,6 +32,7 @@ export class RegistroComponent implements OnInit{
       this.registryService.createUser(this.registryForm.value as RegistryRequest).subscribe(data => {
         console.log(data)
         this.router.navigateByUrl('/home');
+        this.sharedService.isRegistered = true;
       })
 
     } 
