@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.component';
 import { FormComponent } from './ecommerce/form/form.component';
 import { CuentaComponent } from './pages/cuenta/cuenta.component';
+import { SuscripcionAdminComponent } from './ecommerce/suscripcion-admin/suscripcion-admin.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -18,11 +19,13 @@ const routes: Routes = [
   {path:'suscripcion', component:SuscripcionComponent},
   {path:'login', component:LoginComponent},
   {path:'formSuscripcion', component:FormComponent},
-  {path:'cuenta', component:CuentaComponent}
+  {path:'cuenta', component:CuentaComponent},
+  {path: 'adminSuscripcion', component:SuscripcionAdminComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

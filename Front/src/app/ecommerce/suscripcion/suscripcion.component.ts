@@ -27,14 +27,5 @@ export class SuscripcionComponent implements OnInit{
     console.log(this.mySuscriptions)
   }
 
-  getSuscriptionOne(){
-    let id = 3
-    this.suscriptionService.getSuscription(id)
-    .subscribe(data => {
-      this.choseSuscription = data;
-      console.log(this.choseSuscription)
-    })
-  }
-
 
 }

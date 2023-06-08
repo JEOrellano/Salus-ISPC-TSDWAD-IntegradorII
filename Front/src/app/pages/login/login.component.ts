@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit{
         }
       }
 
-        /* 
+        /*
         {
         next: (userData) => {
           console.log(userData);
@@ -73,5 +73,5 @@ export class LoginComponent implements OnInit{
     }
   }
 
-  
+
 }
