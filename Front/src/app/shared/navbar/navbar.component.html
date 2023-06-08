@@ -19,7 +19,8 @@
             Usuario
           </a>
           <ul class="dropdown-menu ms-3">
-            <li *ngIf="!sharedService.isLoggedIn"><a class="dropdown-item" href="/login">Iniciar sesión</a></li>
+            <li *ngIf="!sharedService.isLoggedIn && !sharedService.isRegistered"><a class="dropdown-item"
+                href="/login">Iniciar sesión</a></li>
             <li *ngIf="!sharedService.isRegistered && !sharedService.isLoggedIn"><a class="dropdown-item"
                 href="/registro">Registrarse</a></li>
             <li *ngIf="sharedService.isLoggedIn || sharedService.isRegistered"><a class="dropdown-item" href="/">Cerrar
@@ -32,8 +33,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/formSuscripcion">Nueva Suscripcion</a>
         </li>
-        <!-- *ngIf="sharedService.isLoggedIn || sharedService.isRegistered" para el li de paciente -->
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="sharedService.isLoggedIn || sharedService.isRegistered">
           <a class="nav-link" routerLink="/paciente">Perfil</a>
         </li>
         <li class="nav-item">

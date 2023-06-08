@@ -1,56 +1,53 @@
-<div class="In-div-nav">
-
-  <nav class="In-nav">
-
-    <div class="In-nav-div">
-      <a class="In-navbar-brand" href="#"><img src="./img/logo.png" alt=""></a>
-
-      <a href="#" class="fuente-primaria fuente-azul">Cerrar sesion</a>
-
-    </div>
-
-  </nav>
-
-</div>
-
 <main>
   <div class="flex-aside">
-
     <div class="div-aside">
-      <aside>
-
-        <ul class="aside-ul">
-          <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Cargar
-              Estudios</button></li>
-          <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Mis
-              Estudios</button></li>
-          <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Modificar mis
-              datos</button>
-          </li>
-          <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Compartir
-              perfil</button></li>
-        </ul>
-
-      </aside>
+      <ul class="aside-ul">
+        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Cargar
+            Estudios</button></li>
+        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Mis
+            Estudios</button></li>
+        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Modificar mis
+            datos</button>
+        </li>
+        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Compartir
+            perfil</button></li>
+      </ul>
     </div>
-
-    <div class="div-dat">
-
-      <section class="datos">
-        <div>
-          <div class="div-flex-dat">
-            <h3 class="fuente-secundaria">Nombres</h3>
-            <h3 class="fuente-secundaria">Apellidos</h3>
-          </div>
-          <p class="fuente-secundaria">Edad</p>
-          <p class="fuente-secundaria">DNI</p>
-          <p class="fuente-secundaria">Obra Social</p>
-          <p class="fuente-secundaria">Email</p>
-          <p class="fuente-secundaria">Medico de cabecera</p>
-          <p class="fuente-secundaria">Localidad</p>
-        </div>
-      </section>
-
-    </div>
+    <form class="formPaciente">
+      <div>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" [(ngModel)]="pacienteData.Nombre_UP">
+      </div>
+      <div>
+        <label for="lastName">Apellido:</label>
+        <input type="text" name="lastName" [(ngModel)]="pacienteData.Apellido_UP">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" [(ngModel)]="pacienteData.Email_UP">
+      </div>
+      <div>
+        <label for="age">Edad:</label>
+        <input type="text" name="age" [(ngModel)]="pacienteData.age">
+      </div>
+      <div>
+        <label for="dni">DNI:</label>
+        <input type="text" name="dni" [(ngModel)]="pacienteData.Dni_UP">
+      </div>
+      <div>
+        <label for="obraSocial">Obra social:</label>
+        <input type="text" name="obraSocial" [(ngModel)]="pacienteData.obraSocial">
+      </div>
+      <div>
+        <label for="medicoCabecera">Médico de cabecera:</label>
+        <input type="text" name="medicoCabecera" [(ngModel)]="pacienteData.medicoCabecera">
+      </div>
+      <div>
+        <label for="localidad">Localidad:</label>
+        <input type="text" name="localidad" [(ngModel)]="pacienteData.localidad">
+      </div>
+      <button (click)="actualizarPaciente()">Actualizar Datos</button>
+      <button (click)="eliminarPaciente()">Eliminar Paciente</button>
+    </form>
   </div>
 </main>

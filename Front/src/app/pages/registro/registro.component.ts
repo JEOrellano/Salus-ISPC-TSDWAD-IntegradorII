@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 import { RegistryService } from 'src/app/services/auth/registry.service';
 import { HttpClient } from '@angular/common/http';
 import { RegistryRequest } from "../../services/auth/registryRequest";
-import { SharedServicesComponent } from '../../services/auth/shared-services/shared-services.component';
+import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
 
 @Component({
   selector: 'app-registro',
@@ -14,6 +14,7 @@ import { SharedServicesComponent } from '../../services/auth/shared-services/sha
 export class RegistroComponent implements OnInit{
   
   loginError:string="";
+  pacienteData: any = {};
   registryForm=this.formBuilder.group({
     Nombre_UP:['', Validators.required],
     Apellido_UP:['', Validators.required],
@@ -33,6 +34,8 @@ export class RegistroComponent implements OnInit{
         console.log(data)
         this.router.navigateByUrl('/home');
         this.sharedService.isRegistered = true;
+        this.pacienteData = data;
+        localStorage.setItem('pacienteData', JSON.stringify(this.pacienteData));
       })
 
     } 

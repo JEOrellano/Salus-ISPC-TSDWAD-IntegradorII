@@ -17,6 +17,7 @@ import { MedicoComponent } from './pages/medico/medico.component';
 import { PacienteComponent } from './pages/paciente/paciente.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { SharedServicesComponent } from './services/auth/shared-services/shared-services.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { SharedServicesComponent } from './services/auth/shared-services/shared-
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [SharedServicesComponent],
   bootstrap: [AppComponent]
