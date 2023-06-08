@@ -9,6 +9,8 @@ import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.compon
 import { FormComponent } from './ecommerce/form/form.component';
 import { CuentaComponent } from './pages/cuenta/cuenta.component';
 import { SuscripcionAdminComponent } from './ecommerce/suscripcion-admin/suscripcion-admin.component';
+import { PacienteComponent } from './pages/paciente/paciente.component';
+
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'formSuscripcion', component:FormComponent},
   {path:'cuenta', component:CuentaComponent},
-  {path: 'adminSuscripcion', component:SuscripcionAdminComponent}
+  {path: 'adminSuscripcion', component:SuscripcionAdminComponent},
+  {path:'paciente', component:PacienteComponent}
+
 ];
 
 @NgModule({

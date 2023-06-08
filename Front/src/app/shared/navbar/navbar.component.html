@@ -19,9 +19,12 @@
             Usuario
           </a>
           <ul class="dropdown-menu ms-3">
-            <li *ngIf="!userLoginOn"><a class="dropdown-item" href="/login">Iniciar Sesión</a></li>
-            <li *ngIf="userLoginOn"><a class="dropdown-item" href="/login">Cerrar Sesión</a></li>
-            <li *ngIf="!userLoginOn"><a class="dropdown-item" routerLink="/registro">Registrarse</a></li>
+            <li *ngIf="!sharedService.isLoggedIn && !sharedService.isRegistered"><a class="dropdown-item"
+                href="/login">Iniciar sesión</a></li>
+            <li *ngIf="!sharedService.isRegistered && !sharedService.isLoggedIn"><a class="dropdown-item"
+                href="/registro">Registrarse</a></li>
+            <li *ngIf="sharedService.isLoggedIn || sharedService.isRegistered"><a class="dropdown-item" href="/">Cerrar
+                sesión</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -40,7 +43,9 @@
             </li>
           </ul>
         </li>
-
+        <li class="nav-item" *ngIf="sharedService.isLoggedIn || sharedService.isRegistered">
+          <a class="nav-link" routerLink="/paciente">Perfil</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/suscripcion"><img width="25"
               src="../../../assets/img-ecommerce/shopping-cart-blue5.png"></a>
