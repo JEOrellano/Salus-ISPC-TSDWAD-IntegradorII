@@ -16,7 +16,8 @@ import { FormComponent } from './ecommerce/form/form.component';
 import { MedicoComponent } from './pages/medico/medico.component';
 import { PacienteComponent } from './pages/paciente/paciente.component';
 import { SuscripcionAdminComponent } from './ecommerce/suscripcion-admin/suscripcion-admin.component';
-import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
+import { RegistroComponent } from './pages/registro/registro.component';
+
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
     MedicoComponent,
     PacienteComponent,
     SuscripcionAdminComponent,
-    FormEditComponent
+    PacienteComponent,
+    RegistroComponent
 
   ],
   imports: [
