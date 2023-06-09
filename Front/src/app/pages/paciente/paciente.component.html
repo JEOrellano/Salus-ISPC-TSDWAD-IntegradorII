@@ -1,53 +1,56 @@
 <main>
   <div class="flex-aside">
     <div class="div-aside">
-      <ul class="aside-ul">
-        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Cargar
+      <ul class="dash-user">
+        <li class="aside-li"><button class="botons">Cargar
             Estudios</button></li>
-        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Mis
+        <li class="aside-li"><button class="botons">Mis
             Estudios</button></li>
-        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Modificar mis
+        <li class="aside-li"><button class="botons">Modificar mis
             datos</button>
         </li>
-        <li class="aside-li"><button class="aside-button fuente-primaria fuente-azul">Compartir
+        <li class="aside-li"><button class="botons">Compartir
             perfil</button></li>
       </ul>
     </div>
-    <form class="formPaciente">
-      <div>
-        <label for="name">Nombre:</label>
-        <input type="text" name="name" [(ngModel)]="pacienteData.Nombre_UP">
-      </div>
-      <div>
-        <label for="lastName">Apellido:</label>
-        <input type="text" name="lastName" [(ngModel)]="pacienteData.Apellido_UP">
-      </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" name="email" [(ngModel)]="pacienteData.Email_UP">
-      </div>
-      <div>
-        <label for="age">Edad:</label>
-        <input type="text" name="age" [(ngModel)]="pacienteData.age">
-      </div>
-      <div>
-        <label for="dni">DNI:</label>
-        <input type="text" name="dni" [(ngModel)]="pacienteData.Dni_UP">
-      </div>
-      <div>
-        <label for="obraSocial">Obra social:</label>
-        <input type="text" name="obraSocial" [(ngModel)]="pacienteData.obraSocial">
-      </div>
-      <div>
-        <label for="medicoCabecera">Médico de cabecera:</label>
-        <input type="text" name="medicoCabecera" [(ngModel)]="pacienteData.medicoCabecera">
-      </div>
-      <div>
-        <label for="localidad">Localidad:</label>
-        <input type="text" name="localidad" [(ngModel)]="pacienteData.localidad">
-      </div>
-      <button (click)="actualizarPaciente()">Actualizar Datos</button>
-      <button (click)="eliminarPaciente()">Eliminar Paciente</button>
-    </form>
+    <div class="form-register">
+      <h1>Datos:</h1>
+      <form class="formPaciente">
+        <div>
+          <label for="name">Nombre:</label>
+          <input class="controls" type="text" name="name" [(ngModel)]="pacienteData.Nombre_UP">
+        </div>
+        <div>
+          <label for="lastName">Apellido:</label>
+          <input class="controls" type="text" name="lastName" [(ngModel)]="pacienteData.Apellido_UP">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input class="controls" type="email" name="email" [(ngModel)]="pacienteData.Email_UP">
+        </div>
+        <div>
+          <label for="age">Edad:</label>
+          <input class="controls" type="text" name="age" [(ngModel)]="pacienteData.age">
+        </div>
+        <div>
+          <label for="dni">DNI:</label>
+          <input class="controls" type="text" name="dni" [(ngModel)]="pacienteData.Dni_UP">
+        </div>
+        <div>
+          <label for="obraSocial">Obra social:</label>
+          <input class="controls" type="text" name="obraSocial" [(ngModel)]="pacienteData.obraSocial">
+        </div>
+        <div>
+          <label for="medicoCabecera">Médico de cabecera:</label>
+          <input class="controls" type="text" name="medicoCabecera" [(ngModel)]="pacienteData.medicoCabecera">
+        </div>
+        <div>
+          <label for="localidad">Localidad:</label>
+          <input class="controls" type="text" name="localidad" [(ngModel)]="pacienteData.localidad">
+        </div>
+        <button class="botons" (click)="actualizarPaciente()">Actualizar Datos</button>
+        <button class="botons" (click)="eliminarPaciente()">Eliminar Paciente</button>
+      </form>
+    </div>
   </div>
 </main>
