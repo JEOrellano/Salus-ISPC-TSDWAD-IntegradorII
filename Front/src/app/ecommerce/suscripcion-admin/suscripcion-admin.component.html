@@ -1,7 +1,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+      <th scope="col">#</th>
       <th scope="col">Tipo Suscripcion</th>
       <th scope="col">Precio</th>
       <th scope="col">Servicios</th>
@@ -15,8 +15,8 @@
       <td>{{dato.Precio_S}}</td>
       <td>{{dato.DescripcionAdmin}}</td>
       <td class="buttonAccion">
-        <button type="button buttonEdit" class="btn bg-primary btn-primary" (click)="editSuscription(dato.id)">Editar</button>
-        <button type="button" class="btn bg-danger btn-danger">Eliminar</button>
+        <button type="button buttonEdit" class="btn bg-primary btn-primary" (click)="editSuscription(dato)">Editar</button>
+        <button type="button" class="btn bg-danger btn-danger" (click)="deleteSuscription(dato.id)">Eliminar</button>
       </td>
     </tr>
   </tbody>

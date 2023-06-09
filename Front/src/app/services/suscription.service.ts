@@ -32,12 +32,21 @@ export class SuscriptionService {
     return this.http.get<Suscription>(`${this.urlApi}/${id}`)
   }
 
+  editSuscription(data: Suscription){
+    return data
+  }
+
   createSuscription(data:Partial<Suscription>){
     return this.http.post<Suscription>(this.urlApi, data);
   }
 
   updateSuscription(id:number, data:Partial<Suscription>){
-    return this.http.put<Suscription>(`${this.urlApi}/${id}`, data);
+    console.log("info que llega al put")
+    console.log(data)
+    return this.http.put<Suscription>(`${this.urlApi}${id}/`, data);
   }
 
+  deleteSuscription(id: number){
+    return this.http.delete<boolean>(`${this.urlApi}${id}/`);
+  }
 }

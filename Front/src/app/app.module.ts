@@ -19,6 +19,7 @@ import { SuscripcionAdminComponent } from './ecommerce/suscripcion-admin/suscrip
 import { RegistroComponent } from './pages/registro/registro.component';
 import { SharedServicesComponent } from './services/auth/shared-services/shared-services.component';
 import { FormsModule } from '@angular/forms';
+import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
 
 
 
@@ -38,6 +39,7 @@ import { FormsModule } from '@angular/forms';
     PacienteComponent,
     RegistroComponent,
     SharedServicesComponent,
+    FormEditComponent,
   ],
   imports: [
     BrowserModule,
