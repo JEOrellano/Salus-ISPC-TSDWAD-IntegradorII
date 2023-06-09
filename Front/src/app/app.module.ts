@@ -15,9 +15,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './ecommerce/form/form.component';
 import { MedicoComponent } from './pages/medico/medico.component';
 import { PacienteComponent } from './pages/paciente/paciente.component';
+import { SuscripcionAdminComponent } from './ecommerce/suscripcion-admin/suscripcion-admin.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { SharedServicesComponent } from './services/auth/shared-services/shared-services.component';
 import { FormsModule } from '@angular/forms';
+import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
+
 
 
 @NgModule({
@@ -32,9 +35,11 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     FormComponent,
     MedicoComponent,
+    SuscripcionAdminComponent,
     PacienteComponent,
     RegistroComponent,
     SharedServicesComponent,
+    FormEditComponent,
   ],
   imports: [
     BrowserModule,

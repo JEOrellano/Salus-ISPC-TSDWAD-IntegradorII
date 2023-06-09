@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators, FormGroup, FormArray, FormControl, AbstractControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ReactiveFormsModule, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SuscriptionService } from './../../services/suscription.service'
 import { CreateSuscriptionDTO, Suscription } from 'src/app/model/suscription.model';
 
@@ -9,18 +9,24 @@ import { CreateSuscriptionDTO, Suscription } from 'src/app/model/suscription.mod
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private suscriptionService: SuscriptionService) { }
+export class FormComponent implements OnInit{
 
+  constructor(private formBuilder: FormBuilder, private router: Router, private suscriptionService: SuscriptionService, private route: ActivatedRoute) { }
   auxiliar: string = "";
+  suscriptionId: number = 0;
 
   suscripcionForm = this.formBuilder.group({
-    TipoServicio_S: ["", [Validators.required, Validators.maxLength(25), Validators.minLength(4)]],
+    TipoServicio_S: ["", [Validators.required, Validators.maxLength(25), Validators.minLength(4), Validators.pattern(/^[a-zA-Z\sñÑáéíóúÁÉÍÓÚ]+$/)]],
     Precio_S: [0, [Validators.required, Validators.min(2000)]],
-    servicios: this.formBuilder.array([])
+    servicios: this.formBuilder.array([], [Validators.required])
   })
 
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      this.suscriptionId = params['id']
+    })
+  }
 
   get ServiciosField(): FormArray {
     return this.suscripcionForm.get('servicios') as FormArray;
