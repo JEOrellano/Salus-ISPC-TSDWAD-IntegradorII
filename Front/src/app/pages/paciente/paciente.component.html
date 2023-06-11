@@ -58,15 +58,15 @@
       <form class="formPaciente" [formGroup]="formulario">
         <div>
           <label for="name">Nombre:</label>
-          <input class="controls" type="text" name="name" formControlName="name">
+          <input class="controls" type="text" name="name" formControlName="Nombre_UP">
         </div>
         <div>
           <label for="lastName">Apellido:</label>
-          <input class="controls" type="text" name="lastName" formControlName="lastName">
+          <input class="controls" type="text" name="lastName" formControlName="Apellido_UP">
         </div>
         <div>
           <label for="email">Email:</label>
-          <input class="controls" type="email" name="email" formControlName="email">
+          <input class="controls" type="email" name="email" formControlName="Email_UP">
         </div>
         <div>
           <label for="age">Edad:</label>
@@ -74,19 +74,19 @@
         </div>
         <div>
           <label for="dni">DNI:</label>
-          <input class="controls" type="text" name="dni" formControlName="dni">
+          <input class="controls" type="text" name="dni" formControlName="Dni_UP">
         </div>
-        <div>
+        <!--  <div>
           <label for="obraSocial">Obra social:</label>
           <input class="controls" type="text" name="obraSocial" formControlName="obraSocial">
-        </div>
-        <div>
+        </div> -->
+        <!--  <div>
           <label for="medicoCabecera">Médico de cabecera:</label>
           <input class="controls" type="text" name="medicoCabecera" formControlName="medicoCabecera">
-        </div>
+        </div> -->
         <div>
           <label for="localidad">Localidad:</label>
-          <input class="controls" type="text" name="localidad" formControlName="localidad">
+          <input class="controls" type="text" name="localidad" formControlName="Localidad_UP">
         </div>
         <button class="botons" (click)="actualizarPaciente()">Actualizar Datos</button>
         <button class="botons" (click)="eliminarPaciente()">Eliminar Paciente</button>

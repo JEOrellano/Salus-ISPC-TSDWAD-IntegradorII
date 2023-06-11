@@ -43,9 +43,9 @@
             </li>
           </ul>
         </li>
-        <!-- *ngIf="sharedService.isLoggedIn || sharedService.isRegistered" -->
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/paciente">Perfil</a>
+        <!--  -->
+        <li class="nav-item" *ngIf="sharedService.isLoggedIn || sharedService.isRegistered">
+          <a class=" nav-link" routerLink="/paciente">Perfil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/suscripcion"><img width="25"
