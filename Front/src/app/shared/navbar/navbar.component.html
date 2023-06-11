@@ -39,9 +39,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/adminMedico">Medicos</a>
         </li>
-        <!-- *ngIf="sharedService.isLoggedIn || sharedService.isRegistered" -->
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/paciente">Perfil</a>
+        <!--  -->
+        <li class="nav-item" *ngIf="sharedService.isLoggedIn || sharedService.isRegistered">
+          <a class=" nav-link" routerLink="/paciente">Perfil</a>
         </li>
         <!-- Carrito Suscripciones (cliente) -->
         <li class="nav-item">

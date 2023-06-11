@@ -1,56 +1,3 @@
-/* import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {Router} from '@angular/router';
-
-
-@Component({
-  selector: 'app-paciente',
-  templateUrl: './paciente.component.html',
-  styleUrls: ['./paciente.component.css']
-})
-export class PacienteComponent implements OnInit {
-  apiUrl = '/api/v1/usuariospacientes/';
-
-  constructor(private http: HttpClient, private router:Router) { }
-  pacienteData: any = {};
-
-  ngOnInit() {
-    const pacienteDataString = localStorage.getItem('pacienteData');
-    if (pacienteDataString) {
-      this.pacienteData = JSON.parse(pacienteDataString);
-      this.cargarPaciente();
-    }
-  }
-
-  cargarPaciente() {
-    if (this.pacienteData.id) {
-      const url = `${this.apiUrl}${this.pacienteData.id}`;
-      this.http.get<any>(url).subscribe(data => {
-        this.pacienteData = data;
-        console.log('Paciente cargado:', data);
-      });
-    }else{
-      console.log('id undefined')
-    }
-  }
-
-  actualizarPaciente() {
-    const url = `${this.apiUrl}/${this.pacienteData.id}/`;
-    this.http.put<any>(url, this.pacienteData).subscribe(response => {
-      console.log('Paciente actualizado:', response);
-    });
-  }
-
-  eliminarPaciente() {
-    const url = `${this.apiUrl}/${this.pacienteData.id}/`;
-    this.http.delete<any>(url).subscribe(response => {
-      localStorage.removeItem('pacienteData');
-      console.log('Paciente eliminado:', response);
-      this.router.navigateByUrl('/home');
-    });
-  }
-} */
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -71,14 +18,14 @@ export class PacienteComponent implements OnInit {
 
   ngOnInit() {
     this.formulario = this.formBuilder.group({
-      name: [''],
-      lastName: [''],
-      email: [''],
+      Nombre_UP: [''],
+      Apellido_UP: [''],
+      Email_UP: [''],
       age: [''],
-      dni: [''],
-      obraSocial: [''],
-      medicoCabecera: [''],
-      localidad: ['']
+      Dni_UP: [''],
+      /* obraSocial: [''],
+      medicoCabecera: [''], */
+      Localidad_UP: ['']
     });
 
     const pacienteDataString = localStorage.getItem('pacienteData');
@@ -97,14 +44,14 @@ export class PacienteComponent implements OnInit {
 
 
         this.formulario.patchValue({
-          name: this.pacienteData.Nombre_UP,
-          lastName: this.pacienteData.Apellido_UP,
-          email: this.pacienteData.Email_UP,
+          Nombre_UP: this.pacienteData.Nombre_UP,
+          Apellido_UP: this.pacienteData.Apellido_UP,
+          Email_UP: this.pacienteData.Email_UP,
           age: this.pacienteData.age,
-          dni: this.pacienteData.Dni_UP,
-          obraSocial: this.pacienteData.obraSocial,
-          medicoCabecera: this.pacienteData.medicoCabecera,
-          localidad: this.pacienteData.localidad
+          Dni_UP: this.pacienteData.Dni_UP,
+          /* obraSocial: this.pacienteData.obraSocial,
+          medicoCabecera: this.pacienteData.medicoCabecera, */
+          Localidad_UP: this.pacienteData.localidad
         });
       });
     } else {
@@ -119,12 +66,13 @@ export class PacienteComponent implements OnInit {
       ...this.pacienteData,
       ...valores
     };
-
-    const url = `${this.apiUrl}/${this.pacienteData.id}/`;
+    const url = `${this.apiUrl}${this.pacienteData.id}/`;
     this.http.put<any>(url, this.pacienteData).subscribe(response => {
       console.log('Paciente actualizado:', response);
     });
   }
+
+  
 
   eliminarPaciente() {
     const url = `${this.apiUrl}/${this.pacienteData.id}/`;
