@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class PacienteComponent implements OnInit {
   apiUrl = '/api/v1/usuariospacientes/';
-  
+
   constructor(private http: HttpClient, private router:Router) { }
   pacienteData: any = {};
 
@@ -94,8 +94,8 @@ export class PacienteComponent implements OnInit {
       this.http.get<any>(url).subscribe(data => {
         this.pacienteData = data;
         console.log('Paciente cargado:', data);
-  
-        
+
+
         this.formulario.patchValue({
           name: this.pacienteData.Nombre_UP,
           lastName: this.pacienteData.Apellido_UP,
@@ -111,7 +111,7 @@ export class PacienteComponent implements OnInit {
       console.log('id undefined');
     }
   }
-  
+
 
   actualizarPaciente() {
     const valores = this.formulario.value;

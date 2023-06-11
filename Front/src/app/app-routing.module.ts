@@ -11,6 +11,9 @@ import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
 import { CuentaComponent } from './pages/cuenta/cuenta.component';
 import { SuscripcionAdminComponent } from './ecommerce/suscripcion-admin/suscripcion-admin.component';
 import { PacienteComponent } from './pages/paciente/paciente.component';
+import { MedicosAdminComponent } from './medicos/medicos-admin/medicos-admin.component';
+import { FormDoctorComponent } from './medicos/form-doctor/form-doctor.component';
+import { FormEditDoctorComponent } from './medicos/form-edit-doctor/form-edit-doctor.component';
 
 
 const routes: Routes = [
@@ -25,7 +28,11 @@ const routes: Routes = [
   {path:'formSuscripcionEdit', component:FormEditComponent},
   {path:'cuenta', component:CuentaComponent},
   {path:'adminSuscripcion', component:SuscripcionAdminComponent},
-  {path:'paciente', component:PacienteComponent}
+  {path:'paciente', component:PacienteComponent},
+  {path:'adminMedico', component:MedicosAdminComponent},
+  {path:'formDoctor', component:FormDoctorComponent},
+  {path:'formDoctorEdit', component:FormEditDoctorComponent},
+
 
 ];
 

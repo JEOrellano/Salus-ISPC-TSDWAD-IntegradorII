@@ -79,7 +79,7 @@ export class FormEditComponent implements OnInit {
       const info = JSON.parse(suscription.Descripcion_S);
       const services = info.map((obj: any) => obj.servicio)
       suscription.Descripcion_S = services?.join(";")
-      console.log(suscription.id)
+
       this.suscriptionService.updateSuscription(suscription.id, suscription)
         .subscribe(data => {
           console.log(data)

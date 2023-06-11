@@ -10,7 +10,7 @@ import { CreateSuscriptionDTO, Suscription } from 'src/app/model/suscription.mod
   styleUrls: ['./form.component.css']
 })
 
-export class FormComponent implements OnInit{
+export class FormComponent{
 
   constructor(private formBuilder: FormBuilder, private router: Router, private suscriptionService: SuscriptionService, private route: ActivatedRoute) { }
   auxiliar: string = "";
@@ -21,12 +21,6 @@ export class FormComponent implements OnInit{
     Precio_S: [0, [Validators.required, Validators.min(2000)]],
     servicios: this.formBuilder.array([], [Validators.required])
   })
-
-  ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.suscriptionId = params['id']
-    })
-  }
 
   get ServiciosField(): FormArray {
     return this.suscripcionForm.get('servicios') as FormArray;
@@ -74,7 +68,7 @@ export class FormComponent implements OnInit{
           console.log(data)
         })
 
-      this.router.navigateByUrl('/suscripcion');
+      this.router.navigateByUrl('/adminSuscripcion');
       this.suscripcionForm.reset();
     } else {
       this.suscripcionForm.markAllAsTouched();

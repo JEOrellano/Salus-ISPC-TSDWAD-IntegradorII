@@ -20,6 +20,10 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { SharedServicesComponent } from './services/auth/shared-services/shared-services.component';
 import { FormsModule } from '@angular/forms';
 import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
+import { MedicosAdminComponent } from './medicos/medicos-admin/medicos-admin.component';
+import { MedicoDetailComponent } from './medicos/medico-detail/medico-detail.component';
+import { FormDoctorComponent } from './medicos/form-doctor/form-doctor.component';
+import { FormEditDoctorComponent } from './medicos/form-edit-doctor/form-edit-doctor.component';
 
 
 
@@ -40,6 +44,10 @@ import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
     RegistroComponent,
     SharedServicesComponent,
     FormEditComponent,
+    MedicosAdminComponent,
+    MedicoDetailComponent,
+    FormDoctorComponent,
+    FormEditDoctorComponent,
   ],
   imports: [
     BrowserModule,
