@@ -15,6 +15,9 @@
         <div *ngIf="TipoServicio_S.errors?.['maxlength']">
           el Tipo de Suscripcion no debe tener mas de 25 caracteres.
         </div>
+        <div *ngIf="TipoServicio_S.errors?.['pattern']">
+          el Tipo de Suscripcion SOLO debe contener letras.
+        </div>
       </div>
       <!-- PRECIO -->
       <input class="controls" type="number" name="precio" placeholder="Ingrese el precio" formControlName="Precio_S">
@@ -43,18 +46,6 @@
           <button class="controls" type="button" (click)="eliminarInput(i)">ELIMINAR SERV N° {{i+1}}</button>
         </div>
       </div>
-      <!-- DESCRIPCION SERVICIO -->
-      <!-- <input class="controls" type="textarea" name="descripcion" placeholder="Ingrese los servicios de la suscripcion"
-        formControlName="Descripcion_S">
-      <div *ngIf="Descripcion_S.invalid && (Descripcion_S.dirty || Descripcion_S.touched)" class="text-danger">
-        <div *ngIf="Descripcion_S.errors?.['required']">
-          la Descripción es requerida.
-        </div>
-
-        <div *ngIf="Descripcion_S.errors?.['maxlength']">
-          el Tipo de Suscripcion debe tener al menos 200 caracteres.
-        </div>
-      </div> -->
       <input class="botons" type="submit" value="AGREGAR SUSCRIPCION">
     </form>
   </section>
