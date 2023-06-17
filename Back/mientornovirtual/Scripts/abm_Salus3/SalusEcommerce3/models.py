@@ -38,7 +38,7 @@ class ManejadorUsuario(BaseUserManager):
 class CustomUser(AbstractBaseUser):
     Nombre_UP=models.CharField(max_length=45,blank=True,default="Nombre_UP")
     Apellido_UP=models.CharField(max_length=45,blank=True,default="Apellido_UP")
-    email = models.EmailField(verbose_name='correlo electronico',max_length=150, unique=True)
+    email = models.EmailField(verbose_name='correo electronico',max_length=150, unique=True)
     Celular_UP=models.CharField(max_length=45,blank=True,default="Celular_UP")
     Direccion_UP=models.CharField(max_length=100,blank=True,default="Direccion_UP")
     Localidad_UP=models.CharField(max_length=45,blank=True,default="Localidad_UP")
