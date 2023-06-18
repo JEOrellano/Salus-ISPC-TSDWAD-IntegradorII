@@ -2,18 +2,22 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Inicio de Suscripcion</th>
-        <th scope="col">Paciente ID</th>
-        <th scope="col">Servicio ID</th>
+        <th scope="col">Inicio Susc.</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Suscripcion</th>
+        <th scope="col">Valor Susc.</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let dato of myVentas">
-        <th scope="row">{{dato.id}}</th>
         <td>{{dato.FechaVenta_V | date: 'dd/MM/yyyy'}}</td>
-        <td>{{dato.id_UP}}</td>
-        <td>{{dato.id_S}}</td>
+        <td>{{dato.Nombre_UP}}</td>
+        <td>{{dato.Apellido_UP}}</td>
+        <td>{{dato.Email_UP}}</td>
+        <td>{{dato.TipoServicio_S}}</td>
+        <td>{{dato.Precio_S}}</td>
       </tr>
     </tbody>
   </table>

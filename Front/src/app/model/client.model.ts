@@ -1,9 +1,7 @@
 export interface Client {
-  dni: string,
-  nombre: string,
-  apellido: string,
-  celular: string,
-  direccion: string,
-  localidad: string,
-  mail: string,
+  id?:number,
+  Nombre_UP: string,
+  Apellido_UP: string,
+  Email_UP: string,
+  Clave_UP: string
 }
