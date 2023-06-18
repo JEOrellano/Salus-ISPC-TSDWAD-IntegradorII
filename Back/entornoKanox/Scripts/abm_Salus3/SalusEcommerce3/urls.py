@@ -1,0 +1,24 @@
+from django.urls import path, include
+from rest_framework import routers
+
+# from Servicios.views import ServicioViewSet
+from SalusEcommerce3 import views
+#-------User
+from .views import RegisterAPI
+from knox import views as knox_views
+from .views import LoginAPI
+
+router=routers.DefaultRouter()
+router.register(r'usuariosmedicos',views.UsuarioMedicoViewSet)
+router.register(r'usuariospacientes',views.UsuarioPacienteViewSet)
+router.register(r'servicios',views.ServicioViewSet)
+router.register(r'ventas',views.VentaViewSet)
+#----
+urlpatterns=[
+    path('registro', RegisterAPI.as_view(), name = 'register'),
+    path('login', LoginAPI.as_view(), name = 'login'),
+    path('logout', knox_views.LogoutView.as_view(), name = 'logout'),
+    path('logoutall', knox_views.LogoutAllView.as_view(), name = 'logoutall'),
+
+    path('',include(router.urls)),
+]
