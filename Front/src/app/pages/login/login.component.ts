@@ -38,16 +38,20 @@ export class LoginComponent implements OnInit{
        const user = this.myUsers.find((user) => {
         return this.loginForm.value.email === user.Email_UP
       })
-      console.log(user)
         if(user){
           if (user.Clave_UP === this.loginForm.value.password) {
-              this.router.navigateByUrl('/home');
+              if (user.Email_UP === "admin@admin.com") {
+                this.sharedService.isAdmin = true;
+              }
               this.sharedService.isLoggedIn = true;
               this.pacienteData = user;
               localStorage.setItem('pacienteData', JSON.stringify(this.pacienteData));
+              this.router.navigateByUrl('/home');
           } else {
             alert("contraseña incorrecta")
           }
+        } else {
+          alert("Correo electrónico incorrecto")
         }
       })
     }else{

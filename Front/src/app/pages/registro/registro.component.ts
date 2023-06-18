@@ -20,7 +20,6 @@ export class RegistroComponent implements OnInit{
     Apellido_UP:['', Validators.required],
     Email_UP:['', [Validators.required,Validators.email]],
     Clave_UP:['',Validators.required],
-    id_C: 2
   })
   
 
@@ -30,6 +29,22 @@ export class RegistroComponent implements OnInit{
 
   registry(){
     if(this.registryForm.valid){
+      this.registryService.checkEmail().subscribe(data => {
+        const email = data.find(paciente => paciente.Email_UP === this.registryForm.value.Email_UP)
+        if (email) {
+          alert("Ya existe ese email. Ingrese uno nuevo")
+        } else {
+          this.registryService.createUser(this.registryForm.value as RegistryRequest).subscribe(data => {
+            this.router.navigateByUrl('/home');
+            this.sharedService.isRegistered = true;
+            this.pacienteData = data;
+            localStorage.setItem('pacienteData', JSON.stringify(this.pacienteData));
+        })
+        }
+      })
+    }
+    
+   /*  if(this.registryForm.valid){
       this.registryService.createUser(this.registryForm.value as RegistryRequest).subscribe(data => {
         console.log(data)
         this.router.navigateByUrl('/home');
@@ -38,6 +53,6 @@ export class RegistroComponent implements OnInit{
         localStorage.setItem('pacienteData', JSON.stringify(this.pacienteData));
       })
 
-    } 
+    }  */
   }
 }
