@@ -5,6 +5,7 @@ import { LoginService } from 'src/app/services/auth/login.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from "../../services/auth/user";
 import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
+import { LoginRequest } from 'src/app/services/auth/loginRequest';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { SharedServicesComponent } from 'src/app/services/auth/shared-services/s
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+
   myUsers: User[] = [];
   loginError:string="";
   pacienteData: any = {};
@@ -43,8 +45,6 @@ export class LoginComponent implements OnInit{
           if (user.Clave_UP === this.loginForm.value.password) {
               this.router.navigateByUrl('/home');
               this.sharedService.isLoggedIn = true;
-              this.pacienteData = user;
-              localStorage.setItem('pacienteData', JSON.stringify(this.pacienteData));
           } else {
             alert("contraseña incorrecta")
           }

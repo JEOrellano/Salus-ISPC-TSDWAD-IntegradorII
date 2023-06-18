@@ -1,0 +1,20 @@
+<main>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Inicio de Suscripcion</th>
+        <th scope="col">Paciente ID</th>
+        <th scope="col">Servicio ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of myVentas">
+        <th scope="row">{{dato.id}}</th>
+        <td>{{dato.FechaVenta_V | date: 'dd/MM/yyyy'}}</td>
+        <td>{{dato.id_UP}}</td>
+        <td>{{dato.id_S}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
