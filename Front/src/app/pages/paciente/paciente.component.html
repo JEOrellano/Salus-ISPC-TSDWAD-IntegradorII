@@ -1,97 +1,36 @@
 <main>
-  <div class="flex-aside">
-    <div class="div-aside">
-      <ul class="dash-user">
-        <li class="aside-li"><button class="botons">Cargar
-            Estudios</button></li>
-        <li class="aside-li"><button class="botons">Mis
-            Estudios</button></li>
-        <li class="aside-li"><button class="botons">Modificar mis
-            datos</button>
-        </li>
-        <li class="aside-li"><button class="botons">Compartir
-            perfil</button></li>
-      </ul>
-    </div>
-    <!-- <div class="form-register">
-      <h1>Datos:</h1>
-      <form class="formPaciente">
-        <div>
-          <label for="name">Nombre:</label>
-          <input class="controls" type="text" name="name" [(ngModel)]="pacienteData.Nombre_UP">
-        </div>
-        <div>
-          <label for="lastName">Apellido:</label>
-          <input class="controls" type="text" name="lastName" [(ngModel)]="pacienteData.Apellido_UP">
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input class="controls" type="email" name="email" [(ngModel)]="pacienteData.Email_UP">
-        </div>
-        <div>
-          <label for="age">Edad:</label>
-          <input class="controls" type="text" name="age" [(ngModel)]="pacienteData.age">
-        </div>
-        <div>
-          <label for="dni">DNI:</label>
-          <input class="controls" type="text" name="dni" [(ngModel)]="pacienteData.Dni_UP">
-        </div>
-        <div>
-          <label for="obraSocial">Obra social:</label>
-          <input class="controls" type="text" name="obraSocial" [(ngModel)]="pacienteData.obraSocial">
-        </div>
-        <div>
-          <label for="medicoCabecera">Médico de cabecera:</label>
-          <input class="controls" type="text" name="medicoCabecera" [(ngModel)]="pacienteData.medicoCabecera">
-        </div>
-        <div>
-          <label for="localidad">Localidad:</label>
-          <input class="controls" type="text" name="localidad" [(ngModel)]="pacienteData.localidad">
-        </div>
-        <button class="botons" (click)="actualizarPaciente()">Actualizar Datos</button>
-        <button class="botons" (click)="eliminarPaciente()">Eliminar Paciente</button>
-      </form>
-    </div> -->
 
-    <div class="form-register">
-      <h1>Datos:</h1>
-      <form class="formPaciente" [formGroup]="formulario">
-        <div>
-          <label for="name">Nombre:</label>
-          <input class="controls" type="text" name="name" formControlName="Nombre_UP">
-        </div>
-        <div>
-          <label for="lastName">Apellido:</label>
-          <input class="controls" type="text" name="lastName" formControlName="Apellido_UP">
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input class="controls" type="email" name="email" formControlName="Email_UP">
-        </div>
-        <div>
-          <label for="age">Edad:</label>
-          <input class="controls" type="text" name="age" formControlName="age">
-        </div>
-        <div>
-          <label for="dni">DNI:</label>
-          <input class="controls" type="text" name="dni" formControlName="Dni_UP">
-        </div>
-        <!--  <div>
-          <label for="obraSocial">Obra social:</label>
-          <input class="controls" type="text" name="obraSocial" formControlName="obraSocial">
-        </div> -->
-        <!--  <div>
-          <label for="medicoCabecera">Médico de cabecera:</label>
-          <input class="controls" type="text" name="medicoCabecera" formControlName="medicoCabecera">
-        </div> -->
-        <div>
-          <label for="localidad">Localidad:</label>
-          <input class="controls" type="text" name="localidad" formControlName="Localidad_UP">
-        </div>
-        <button class="botons" (click)="actualizarPaciente()">Actualizar Datos</button>
-        <button class="botons" (click)="eliminarPaciente()">Eliminar Paciente</button>
-      </form>
-    </div>
 
+  <div class="form-register">
+    <h1>Datos:</h1>
+    <form class="formPaciente" [formGroup]="formulario">
+      <div>
+        <label for="name">Nombre:</label>
+        <input class="controls" type="text" name="name" formControlName="Nombre_UP">
+      </div>
+      <div>
+        <label for="lastName">Apellido:</label>
+        <input class="controls" type="text" name="lastName" formControlName="Apellido_UP">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input class="controls" type="email" name="email" formControlName="Email_UP">
+      </div>
+      <div>
+        <label for="age">Edad:</label>
+        <input class="controls" type="text" name="age" formControlName="age">
+      </div>
+      <div>
+        <label for="dni">DNI:</label>
+        <input class="controls" type="text" name="dni" formControlName="Dni_UP">
+      </div>
+      <div>
+        <label for="localidad">Localidad:</label>
+        <input class="controls" type="text" name="localidad" formControlName="Localidad_UP">
+      </div>
+      <button class="botons" (click)="actualizarPaciente()">Actualizar Datos</button>
+      <button class="botons" (click)="eliminarPaciente()">Eliminar Paciente</button>
+    </form>
   </div>
+
 </main>
