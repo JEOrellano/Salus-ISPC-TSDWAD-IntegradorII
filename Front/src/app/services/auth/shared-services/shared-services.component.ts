@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class SharedServicesComponent {
   isLoggedIn: boolean = false;
   isRegistered: boolean = false;
+  isAdmin: boolean = false;
+
 
   constructor() { }
 }

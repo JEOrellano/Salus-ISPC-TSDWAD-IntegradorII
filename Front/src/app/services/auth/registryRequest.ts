@@ -3,5 +3,4 @@ export interface RegistryRequest{
   Apellido_UP: string,
   Email_UP: string,
   Clave_UP: string,
-  id_C: 2
 }
