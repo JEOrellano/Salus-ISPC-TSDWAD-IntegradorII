@@ -21,11 +21,7 @@ export class PacienteComponent implements OnInit {
       Nombre_UP: [''],
       Apellido_UP: [''],
       Email_UP: [''],
-      age: [''],
-      Dni_UP: [''],
-      /* obraSocial: [''],
-      medicoCabecera: [''], */
-      Localidad_UP: ['']
+     
     });
 
     const pacienteDataString = localStorage.getItem('pacienteData');
@@ -47,11 +43,7 @@ export class PacienteComponent implements OnInit {
           Nombre_UP: this.pacienteData.Nombre_UP,
           Apellido_UP: this.pacienteData.Apellido_UP,
           Email_UP: this.pacienteData.Email_UP,
-          age: this.pacienteData.age,
-          Dni_UP: this.pacienteData.Dni_UP,
-          /* obraSocial: this.pacienteData.obraSocial,
-          medicoCabecera: this.pacienteData.medicoCabecera, */
-          Localidad_UP: this.pacienteData.localidad
+          
         });
       });
     } else {
