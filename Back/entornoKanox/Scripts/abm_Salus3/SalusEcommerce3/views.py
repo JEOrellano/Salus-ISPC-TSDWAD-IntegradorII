@@ -84,6 +84,14 @@ class VentaViewSet(viewsets.ModelViewSet):
  queryset = Ventas.objects.all()
  serializer_class = VentaSerializer
 
+# Ventas por cliente
+class verVentasCliente(APIView):
+    #permission_classes = [permissions.IsAuthenticated]
+    def get(self,request,pk=None):
+        ventasCliente=Ventas.objects.filter(id_UP=pk)
+        serializer = VentaSerializer(ventasCliente, many=True)
+        return Response(serializer.data)
+
 # pasarela de pago mercadolibre
 class ProcessPaymentAPIView(APIView):
     def post(self, request):
