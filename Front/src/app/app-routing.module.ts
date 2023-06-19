@@ -16,6 +16,7 @@ import { FormDoctorComponent } from './medicos/form-doctor/form-doctor.component
 import { FormEditDoctorComponent } from './medicos/form-edit-doctor/form-edit-doctor.component';
 import { PagoComponent } from './ecommerce/pago/pago.component';
 import { PagoAdminComponent } from './ecommerce/pago-admin/pago-admin.component';
+import { PagoClienteComponent } from './ecommerce/pago-cliente/pago-cliente.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path:'formDoctor', component:FormDoctorComponent},
   {path:'formDoctorEdit', component:FormEditDoctorComponent},
   {path:'pago', component:PagoComponent},
-  {path:'adminPago', component:PagoAdminComponent}
+  {path:'adminPago', component:PagoAdminComponent},
+  {path:'clientePago', component:PagoClienteComponent},
 ];
 
 @NgModule({
