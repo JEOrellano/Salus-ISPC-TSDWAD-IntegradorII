@@ -38,9 +38,17 @@
         <li class="nav-item" *ngIf="sharedService.isAdmin">
           <a class="nav-link" routerLink="/adminMedico">Medicos</a>
         </li>
-        <!--  -->
+        <!-- Lista de Ventas (admin) -->
+        <li class="nav-item" *ngIf="sharedService.isAdmin">
+          <a class="nav-link" routerLink="/adminPago">Ventas</a>
+        </li>
+        <!-- Perfil -->
         <li class="nav-item" *ngIf="!sharedService.isAdmin && (sharedService.isLoggedIn || sharedService.isRegistered)">
           <a class=" nav-link" routerLink="/paciente">Perfil</a>
+        </li>
+        <!-- Suscripcion -->
+        <li class="nav-item" *ngIf="!sharedService.isAdmin && (sharedService.isLoggedIn || sharedService.isRegistered)">
+          <a class=" nav-link" routerLink="/clientePago">Suscripción</a>
         </li>
         <!-- Carrito Suscripciones (cliente) -->
         <li class="nav-item" *ngIf="!sharedService.isAdmin && (sharedService.isLoggedIn || sharedService.isRegistered)">

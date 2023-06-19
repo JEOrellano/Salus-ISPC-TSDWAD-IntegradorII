@@ -86,7 +86,7 @@ export class PagoComponent {
         console.log("Data venta")
         console.log(data)
       })
-      this.router.navigateByUrl('/adminPago');
+      this.router.navigateByUrl('/clientePago');
       this.pagoForm.reset();
     }else {
       this.pagoForm.markAllAsTouched();
