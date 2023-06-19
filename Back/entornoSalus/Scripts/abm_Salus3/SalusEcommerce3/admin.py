@@ -16,7 +16,7 @@ class UsuarioMedicoAdmin(admin.ModelAdmin):
     list_display=('id','Nombre_UM','Apellido_UM','Celular_UM','Direccion_UM','Localidad_UM','Dni_UM','Matricula_UM')
 # Tabla UsuariosPacientes
 class UsuarioPacienteAdmin(admin.ModelAdmin):
-    list_display=('id','Nombre_UP','Apellido_UP','Email_UP','Clave_UP','Celular_UP','Direccion_UP','Localidad_UP','Dni_UP')
+    list_display=('id','Nombre_UP','Apellido_UP','Email_UP','Clave_UP')
 # Tabla Servicios
 class ServicioAdmin(admin.ModelAdmin):
     list_display=('id','TipoServicio_S','Precio_S','Descripcion_S')

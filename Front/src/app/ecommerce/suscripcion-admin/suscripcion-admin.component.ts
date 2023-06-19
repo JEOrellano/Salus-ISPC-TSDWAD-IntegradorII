@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suscription } from 'src/app/model/suscription.model';
 import { SuscriptionService } from 'src/app/services/suscription.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-suscripcion-admin',
@@ -32,11 +33,24 @@ export class SuscripcionAdminComponent implements OnInit {
   }
 
   deleteSuscription(id: number){
-    this.suscriptionService.deleteSuscription(id)
-    .subscribe(data => {
-      const productIndex = this.mySuscriptions.findIndex(item => item.id === id)
-      this.mySuscriptions.splice(productIndex, 1);
-    })
+    Swal.fire({
+      title: 'Confirmar Eliminación',
+      text: '¿Estás seguro de que deseas eliminar esta Suscripción?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.suscriptionService.deleteSuscription(id)
+        .subscribe(data => {
+          const productIndex = this.mySuscriptions.findIndex(item => item.id === id)
+          this.mySuscriptions.splice(productIndex, 1);
+        })
+      }
+    });
   }
 
 }

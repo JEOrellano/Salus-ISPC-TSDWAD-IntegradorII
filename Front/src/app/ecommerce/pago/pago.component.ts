@@ -5,6 +5,7 @@ import { SuscriptionService } from 'src/app/services/suscription.service';
 import { Suscription } from 'src/app/model/suscription.model';
 import { Ventas } from 'src/app/model/venta.model';
 import { VentaService } from 'src/app/services/venta.service';
+import Swal from'sweetalert2';
 
 @Component({
   selector: 'app-pago',
@@ -19,6 +20,7 @@ export class PagoComponent {
   idAuxiliar: number = 0;
   precioAuxiliar: number = 0;
   pacienteData: any = {};
+  pagAlert: string = "";
   suscripcionActual: Suscription = {
     id: 0,
     Precio_S: 0,
@@ -40,12 +42,12 @@ export class PagoComponent {
   }
 
   pagoForm = this.formBuilder.group({
-    nroTarjeta: ["", [Validators.required]],
-    vencimientoTarjeta: ["", [Validators.required]],
-    codSeguridad: ["", [Validators.required]],
-    nombre: ["", [Validators.required]],
-    dni: ["", [Validators.required]],
-    email:["", [Validators.required]]
+    nroTarjeta: ["", [Validators.required, Validators.maxLength(16), Validators.minLength(16), Validators.pattern(/^[0-9]+$/)]],
+    vencimientoTarjeta: ["", [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+    codSeguridad: ["", [Validators.required, Validators.maxLength(3), Validators.minLength(3), Validators.pattern(/^[0-9]+$/)]],
+    nombre: ["", [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\sñÑáéíóúÁÉÍÓÚ]+$/)]],
+    dni: ["", [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern(/^[0-9]+$/)]],
+    email:["", [Validators.required, Validators.minLength(4),Validators.email]]
   })
 
   get nroTarjeta(){
@@ -86,7 +88,13 @@ export class PagoComponent {
         console.log("Data venta")
         console.log(data)
       })
-      this.router.navigateByUrl('/adminPago');
+      Swal.fire({
+        icon:'success',
+        title: `Su suscripción ha sido exitosa`,
+        text: `Se ha debitado $${this.precioAuxiliar}.00`
+      }
+      )
+      this.router.navigateByUrl('/clientePago');
       this.pagoForm.reset();
     }else {
       this.pagoForm.markAllAsTouched();
@@ -107,10 +115,6 @@ export class PagoComponent {
       if (month < 1 || month > 12) {
         formattedValue = '12';
       }
-    }
-
-    if (formattedValue.length > 2 && formattedValue.charAt(2) !== '/') {
-      formattedValue = formattedValue.substring(0, 2) + '/' + formattedValue.substring(2);
     }
 
     this.vencimiento = formattedValue;

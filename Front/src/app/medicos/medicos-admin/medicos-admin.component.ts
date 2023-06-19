@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Doctors } from 'src/app/model/doctor.model';
 import { DoctorsService } from 'src/app/services/doctors.service';
 import { Router } from '@angular/router';
+import Swal from'sweetalert2';
 
 @Component({
   selector: 'app-medicos-admin',
@@ -36,11 +37,24 @@ export class MedicosAdminComponent implements OnInit {
   }
 
   deleteDoctor(id: number){
-    this.doctorsService.deleteDoctor(id)
-    .subscribe(data => {
-      const productIndex = this.myDoctors.findIndex(item => item.id === id)
-      this.myDoctors.splice(productIndex, 1);
-    })
+    Swal.fire({
+      title: 'Confirmar Eliminación',
+      text: '¿Estás seguro de que deseas eliminar este Médico?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.doctorsService.deleteDoctor(id)
+          .subscribe(data => {
+            const productIndex = this.myDoctors.findIndex(item => item.id === id);
+            this.myDoctors.splice(productIndex, 1);
+          });
+      }
+    });
   }
 
 }
