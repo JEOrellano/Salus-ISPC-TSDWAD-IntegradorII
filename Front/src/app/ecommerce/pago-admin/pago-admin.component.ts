@@ -34,7 +34,9 @@ export class PagoAdminComponent implements OnInit{
             venta.Email_UP = clientData.Email_UP;
             venta.TipoServicio_S = suscriptionData.TipoServicio_S;
             venta.Precio_S = suscriptionData.Precio_S;
-
+            const fechaVenta = new Date(venta.FechaVenta_V);
+            const fechaFin = new Date(fechaVenta.getTime() + 30 * 24 * 60 * 60 * 1000);
+            venta.FechaFin_V = fechaFin;
             return venta;
           })
         );

@@ -19,6 +19,15 @@
             <div *ngIf="nroTarjeta.errors?.['required']">
               el Número de Tarjeta es requerido.
             </div>
+            <div *ngIf="nroTarjeta.errors?.['minlength']">
+              el Número de Tarjeta debe tener 16 carácteres.
+            </div>
+            <div *ngIf="nroTarjeta.errors?.['maxlength']">
+              el Número de Tarjeta debe tener 16 carácteres.
+            </div>
+            <div *ngIf="nroTarjeta.errors?.['pattern']">
+              el Número de Tarjeta debe contener SOLO números.
+            </div>
           </div>
         </div>
       </div>
@@ -31,6 +40,9 @@
             <div *ngIf="vencimientoTarjeta.errors?.['required']">
               el Vencimiento es requerido.
             </div>
+            <div *ngIf="vencimientoTarjeta.errors?.['pattern']">
+              el Vencimiento debe contener SOLO números.
+            </div>
           </div>
         </div>
         <div class="col">
@@ -39,6 +51,15 @@
           <div *ngIf="codSeguridad.invalid && (codSeguridad.dirty || codSeguridad.touched)" class="text-danger">
             <div *ngIf="codSeguridad.errors?.['required']">
               el Código de Seguridad es requerido.
+            </div>
+            <div *ngIf="codSeguridad.errors?.['minlength']">
+              el Código de Seguridad debe tener 3 carácteres.
+            </div>
+            <div *ngIf="codSeguridad.errors?.['maxlength']">
+              el Código de Seguridad debe tener 3 carácteres.
+            </div>
+            <div *ngIf="codSeguridad.errors?.['pattern']">
+              el Código de Seguridad debe contener SOLO números.
             </div>
           </div>
         </div>
@@ -51,6 +72,12 @@
             <div *ngIf="nombre.errors?.['required']">
               el Nombre del Titular es requerido.
             </div>
+            <div *ngIf="nombre.errors?.['minlength']">
+              el Nombre del Titular debe tener al menos 3 caracteres.
+            </div>
+            <div *ngIf="nombre.errors?.['pattern']">
+              el Nombre del Titular SOLO debe contener letras.
+            </div>
           </div>
         </div>
       </div>
@@ -62,6 +89,15 @@
             <div *ngIf="dni.errors?.['required']">
               el DNI del Titular es requerido.
             </div>
+            <div *ngIf="dni.errors?.['minlength']">
+              el DNI debe tener 8 carácteres.
+            </div>
+            <div *ngIf="dni.errors?.['maxlength']">
+              el DNI debe tener 8 carácteres.
+            </div>
+            <div *ngIf="dni.errors?.['pattern']">
+              el DNI debe contener SOLO números.
+            </div>
           </div>
         </div>
       </div>
@@ -72,6 +108,12 @@
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
             <div *ngIf="email.errors?.['required']">
               el E-mail es requerido.
+            </div>
+            <div *ngIf="email.errors?.['minlength']">
+              el email debe tener al menos 4 caracteres.
+            </div>
+            <div *ngIf="email.errors?.['email']">
+              se debe insertar un formato email correcto.
             </div>
           </div>
         </div>

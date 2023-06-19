@@ -32,6 +32,7 @@ export class PagoClienteComponent implements OnInit {
     this.ventaService.getAllVentas()
   .pipe(
     switchMap(ventas => {
+
       const filteredVentas = ventas.filter(venta => venta.id_UP === this.pacienteData.id);
       if (filteredVentas.length === 0) {
         this.siVentas = false; // No hay ventas
@@ -50,7 +51,9 @@ export class PagoClienteComponent implements OnInit {
             venta.Email_UP = clientData.Email_UP;
             venta.TipoServicio_S = suscriptionData.TipoServicio_S;
             venta.Precio_S = suscriptionData.Precio_S;
-
+            const fechaVenta = new Date(venta.FechaVenta_V);
+            const fechaFin = new Date(fechaVenta.getTime() + 30 * 24 * 60 * 60 * 1000);
+            venta.FechaFin_V = fechaFin;
             return venta;
           })
         );
@@ -67,8 +70,7 @@ export class PagoClienteComponent implements OnInit {
   .subscribe(data => {
     this.myVentas = data;
     console.log(data);
-  });
-
+  })
   }
 
 }
