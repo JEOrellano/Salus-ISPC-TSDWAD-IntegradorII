@@ -21,7 +21,7 @@ class UsuarioPacienteSerializer(serializers.ModelSerializer):
     class Meta:
        model = UsuariosPacientes
        fields = '__all__'
-       #fields = ('id','Nombre_UP','Apellido_UP','Email_UP','Clave_UP','Celular_UP','Direccion_UP','Localidad_UP','Dni_UP')
+       #fields = ('id','Nombre_UP','Apellido_UP','Email_UP','Clave_UP')
 
 # Tabla Servicios
 class ServicioSerializer(serializers.ModelSerializer):

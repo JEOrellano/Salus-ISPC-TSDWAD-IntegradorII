@@ -91,7 +91,7 @@ DATABASES = {
 			'ENGINE': 'django.db.backends.mysql',
 			'NAME': 'abm_SalusE3',
 			'USER': 'root',
-			'PASSWORD': '',
+			'PASSWORD': 'root',
 			'HOST': 'localhost',
 			'PORT': '3306',
 			'OPTIONS': {
