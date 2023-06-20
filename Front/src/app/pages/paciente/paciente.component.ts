@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from'sweetalert2';
+import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
 
 @Component({
   selector: 'app-paciente',
@@ -15,7 +16,7 @@ export class PacienteComponent implements OnInit {
 
   pacienteData: any = {};
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private http: HttpClient, private formBuilder: FormBuilder, private router: Router, private sharedService: SharedServicesComponent) { }
 
   ngOnInit() {
     this.formulario = this.formBuilder.group({
@@ -80,14 +81,17 @@ export class PacienteComponent implements OnInit {
       if (result.isConfirmed) {
         Swal.fire(
           'Usuario eliminado',
+          'Your file has been deleted.',
           'success'
         )
         const url = `${this.apiUrl}/${this.pacienteData.id}/`;
         this.http.delete<any>(url).subscribe(response => {
         localStorage.removeItem('pacienteData');
+        this.sharedService.isRegistered = false;
+        this.sharedService.isLoggedIn = false;
         setTimeout(() => {
           this.router.navigateByUrl('/home');
-        }, 3000);
+        }, 1500);
        });
       }
     })
