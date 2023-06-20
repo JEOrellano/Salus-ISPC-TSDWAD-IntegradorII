@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from'sweetalert2';
 
 @Component({
   selector: 'app-paciente',
@@ -67,11 +68,29 @@ export class PacienteComponent implements OnInit {
   
 
   eliminarPaciente() {
-    const url = `${this.apiUrl}/${this.pacienteData.id}/`;
-    this.http.delete<any>(url).subscribe(response => {
-      localStorage.removeItem('pacienteData');
-      console.log('Paciente eliminado:', response);
-      this.router.navigateByUrl('/home');
-    });
+    Swal.fire({
+      title: 'Está seguro que desea eliminar su usuario?',
+      text: "No hay vuelta atrás!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Usuario eliminado',
+          'success'
+        )
+        const url = `${this.apiUrl}/${this.pacienteData.id}/`;
+        this.http.delete<any>(url).subscribe(response => {
+        localStorage.removeItem('pacienteData');
+        setTimeout(() => {
+          this.router.navigateByUrl('/home');
+        }, 3000);
+       });
+      }
+    })
+    
   }
 }

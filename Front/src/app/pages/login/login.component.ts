@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from "../../services/auth/user";
 import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
 import { LoginRequest } from 'src/app/services/auth/loginRequest';
+import Swal from'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit{
   loginError:string="";
   pacienteData: any = {};
   loginForm=this.formBuilder.group({
-    email:['', [Validators.required,Validators.email]],
+    email:["", [Validators.required, Validators.minLength(4),Validators.email]],
     password:['',Validators.required],
   })
   constructor(private formBuilder:FormBuilder, private router:Router, private loginService: LoginService, private http: HttpClient, private sharedService: SharedServicesComponent){}
@@ -50,15 +51,27 @@ export class LoginComponent implements OnInit{
               localStorage.setItem('pacienteData', JSON.stringify(this.pacienteData));
               this.router.navigateByUrl('/home');
           } else {
-            alert("contraseña incorrecta")
+            Swal.fire({
+              icon:'warning',
+              title: `Contraseña inválida.`,
+              text: `Introduzca la contraseña correcta.`
+            })
           }
         } else {
-          alert("Correo electrónico incorrecto")
+          Swal.fire({
+            icon:'warning',
+            title: `Usuario no registrado.`,
+            text: `Introduzca el usuario correcto.`
+          })
         }
       })
     }else{
       this.loginForm.markAllAsTouched();
-      alert('error al ingresar datos')
+      Swal.fire({
+        icon:'warning',
+        title: `Los datos son incorrectos.`,
+        text: `Por favor verifique los datos.`
+      })
     }
   }
 
