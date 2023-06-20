@@ -4,6 +4,9 @@ import {Router} from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from "../../services/auth/user";
+import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
+import { LoginRequest } from 'src/app/services/auth/loginRequest';
+import Swal from'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +14,15 @@ import { User } from "../../services/auth/user";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+
   myUsers: User[] = [];
   loginError:string="";
+  pacienteData: any = {};
   loginForm=this.formBuilder.group({
-    email:['', [Validators.required,Validators.email]],
+    email:["", [Validators.required, Validators.minLength(4),Validators.email]],
     password:['',Validators.required],
   })
-  constructor(private formBuilder:FormBuilder, private router:Router, private loginService: LoginService, private http: HttpClient){}
+  constructor(private formBuilder:FormBuilder, private router:Router, private loginService: LoginService, private http: HttpClient, private sharedService: SharedServicesComponent){}
 
   ngOnInit(): void{}
 
@@ -36,20 +41,39 @@ export class LoginComponent implements OnInit{
        const user = this.myUsers.find((user) => {
         return this.loginForm.value.email === user.Email_UP
       })
-      console.log(user)
         if(user){
           if (user.Clave_UP === this.loginForm.value.password) {
+              if (user.Email_UP === "admin@admin.com") {
+                this.sharedService.isAdmin = true;
+              }
+              this.sharedService.isLoggedIn = true;
+              this.pacienteData = user;
+              localStorage.setItem('pacienteData', JSON.stringify(this.pacienteData));
               this.router.navigateByUrl('/home');
           } else {
-            alert("contraseña incorrecta")
+            Swal.fire({
+              icon:'warning',
+              title: `Contraseña inválida.`,
+              text: `Introduzca la contraseña correcta.`
+            })
           }
+        } else {
+          Swal.fire({
+            icon:'warning',
+            title: `Usuario no registrado.`,
+            text: `Introduzca el usuario correcto.`
+          })
         }
       })
     }else{
       this.loginForm.markAllAsTouched();
-      alert('error al ingresar datos')
+      Swal.fire({
+        icon:'warning',
+        title: `Los datos son incorrectos.`,
+        text: `Por favor verifique los datos.`
+      })
     }
   }
 
-  
+
 }

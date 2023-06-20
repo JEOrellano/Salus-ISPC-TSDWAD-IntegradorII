@@ -7,7 +7,17 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SuscripcionComponent } from './ecommerce/suscripcion/suscripcion.component';
 import { FormComponent } from './ecommerce/form/form.component';
+import { FormEditComponent } from './ecommerce/form-edit/form-edit.component';
 import { CuentaComponent } from './pages/cuenta/cuenta.component';
+import { SuscripcionAdminComponent } from './ecommerce/suscripcion-admin/suscripcion-admin.component';
+import { PacienteComponent } from './pages/paciente/paciente.component';
+import { MedicosAdminComponent } from './medicos/medicos-admin/medicos-admin.component';
+import { FormDoctorComponent } from './medicos/form-doctor/form-doctor.component';
+import { FormEditDoctorComponent } from './medicos/form-edit-doctor/form-edit-doctor.component';
+import { PagoComponent } from './ecommerce/pago/pago.component';
+import { PagoAdminComponent } from './ecommerce/pago-admin/pago-admin.component';
+import { PagoClienteComponent } from './ecommerce/pago-cliente/pago-cliente.component';
+
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -18,11 +28,21 @@ const routes: Routes = [
   {path:'suscripcion', component:SuscripcionComponent},
   {path:'login', component:LoginComponent},
   {path:'formSuscripcion', component:FormComponent},
-  {path:'cuenta', component:CuentaComponent}
+  {path:'formSuscripcionEdit', component:FormEditComponent},
+  {path:'cuenta', component:CuentaComponent},
+  {path:'adminSuscripcion', component:SuscripcionAdminComponent},
+  {path:'paciente', component:PacienteComponent},
+  {path:'adminMedico', component:MedicosAdminComponent},
+  {path:'formDoctor', component:FormDoctorComponent},
+  {path:'formDoctorEdit', component:FormEditDoctorComponent},
+  {path:'pago', component:PagoComponent},
+  {path:'adminPago', component:PagoAdminComponent},
+  {path:'clientePago', component:PagoClienteComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

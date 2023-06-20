@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError} from 'rxjs'
 import { User } from './user';
+import { LoginRequest } from './loginRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,9 @@ export class LoginService {
 
   login(){
     const url = "/api/v1/usuariospacientes"
-    
+
     return this.http.get<User[]>(url)
-    
+
   }
 
   private handleError(error:HttpErrorResponse){

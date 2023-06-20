@@ -1,3 +1,18 @@
+main {
+  padding: 4rem;
+}
+
+h1 {
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+p {
+  color: var(--primary-color);
+  text-align: center;
+}
+
 .form-register {
   width: 400px;
   background: #004d40;

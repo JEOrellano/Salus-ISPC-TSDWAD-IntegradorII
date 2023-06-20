@@ -3,6 +3,7 @@ export interface Suscription {
   TipoServicio_S: string,
   Precio_S: number,
   Descripcion_S: string,
+  DescripcionAdmin?: string,
   DescripcionList?: string[]
 }
 

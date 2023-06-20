@@ -21,7 +21,8 @@ export class SuscriptionService {
       map(suscripciones => suscripciones.map(item => {
         return{
           ...item,
-          DescripcionList: item.Descripcion_S.split(";")
+          DescripcionList: item.Descripcion_S.split(";"),
+          DescripcionAdmin: item.Descripcion_S.replaceAll(";", ", ")
         }
       }))
     )
@@ -31,8 +32,21 @@ export class SuscriptionService {
     return this.http.get<Suscription>(`${this.urlApi}/${id}`)
   }
 
-  createSuscription(data:CreateSuscriptionDTO){
-    return this.http.post<CreateSuscriptionDTO>(this.urlApi, data);
+  editSuscription(data: Suscription){
+    return data
   }
 
+  createSuscription(data:Partial<Suscription>){
+    return this.http.post<Suscription>(this.urlApi, data);
+  }
+
+  updateSuscription(id:number, data:Partial<Suscription>){
+    console.log("info que llega al put")
+    console.log(data)
+    return this.http.put<Suscription>(`${this.urlApi}${id}/`, data);
+  }
+
+  deleteSuscription(id: number){
+    return this.http.delete<boolean>(`${this.urlApi}${id}/`);
+  }
 }

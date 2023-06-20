@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedServicesComponent } from 'src/app/services/auth/shared-services/shared-services.component';
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  userLoginOn: boolean = false;
 
-  constructor(){}
+  constructor(public sharedService: SharedServicesComponent){}
 
   ngOnIinit(): void {}
 }

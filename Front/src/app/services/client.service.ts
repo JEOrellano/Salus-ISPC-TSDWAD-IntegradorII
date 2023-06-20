@@ -7,7 +7,7 @@ import { Client } from './../model/client.model'
 })
 export class ClientService {
 
-  urlApi = "https://my-json-server.typicode.com/GastonSca/db-json/pacientes"
+  urlApi = "api/v1/usuariospacientes/"
 
   constructor(
     private http: HttpClient
@@ -17,7 +17,7 @@ export class ClientService {
     return this.http.get<Client[]>(this.urlApi)
   }
 
-  getClient(id: string){
+  getClient(id: number){
     return this.http.get<Client>(`${this.urlApi}/${id}`)
   }
 
