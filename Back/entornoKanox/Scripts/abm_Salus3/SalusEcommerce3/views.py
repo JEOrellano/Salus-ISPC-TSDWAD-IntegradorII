@@ -130,3 +130,5 @@ class ProcessPaymentAPIView(APIView):
 class retornarPagado(APIView):  # Retornar custom json 
     def get(self, request):
         return Response({"respuesta": "aprobado"})
+
+# el pago a mercadopago es simulado falta implemnatar correctamente la api
