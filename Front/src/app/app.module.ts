@@ -29,6 +29,9 @@ import { DetalleEspecialidadComponent } from './pages/detalle-especialidad/detal
 import { JwtInterceptorService } from './services/auth/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
 
+import { ProtegidosModule } from './protegidos/protegidos.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +55,8 @@ import { ErrorInterceptorService } from './services/auth/error-interceptor.servi
     CDetalleEspecialidadComponent,
     EspecialidadComponent,
     DetalleEspecialidadComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,7 @@ import { ErrorInterceptorService } from './services/auth/error-interceptor.servi
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    ProtegidosModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptorService,multi:true},
